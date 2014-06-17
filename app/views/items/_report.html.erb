@@ -1,0 +1,26 @@
+<p>
+  Thank you! Here's the invoice for your purchase:
+</p>
+
+<div class="fancy-table">
+  <table>
+    <tr>
+      <td>Item ID</td>
+      <td>Price</td>
+      <td>Style</td>
+      <td>Type</td>
+      <td>Color</td>
+      <td>Size</td>
+    </tr>      
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.id %></td>
+        <td><%= number_to_currency(item.price_sold) %></td>
+        <td><%= item.style.name %></td>
+        <td><%= item.type.name %></td>
+        <td><%= item.color.name %></td>
+        <td><%= item.size.name %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

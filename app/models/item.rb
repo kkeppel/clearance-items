@@ -13,6 +13,7 @@ class Item < ActiveRecord::Base
   ### Class Methods ###
 
   def self.import(file)
+    items = []
     spreadsheet = open_spreadsheet(file)
     CSV.foreach(file.path, headers: true) do |row|
       raise "Item ID #{row['item_id']} is invalid. Item IDs can only be numbers." if row["item_id"] =~ /\D/
@@ -26,7 +27,9 @@ class Item < ActiveRecord::Base
       end
       item.price_sold = Item.discount_price(item)
       item.save!
-    end    
+      items << item
+    end
+    return items
   end
 
   def self.open_spreadsheet(file)

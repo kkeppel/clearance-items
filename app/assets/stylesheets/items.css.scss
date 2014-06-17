@@ -1,3 +1,56 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.fancy-table {
+  margin:0px;padding:0px;
+  width:60%;
+  border:1px solid #000000;
+
+}
+
+.fancy-table table{
+  width:100%;
+  height:100%;
+  margin:0px;padding:0px;
+}
+.fancy-table tr:nth-child(odd){ background-color:#ffffff; }
+.fancy-table tr:nth-child(even){ background-color:#f9e5e5; }
+
+.fancy-table td{
+  vertical-align:middle;
+  border:1px solid #000000;
+  border-width:0px 1px 1px 0px;
+  text-align:left;
+  padding:7px;
+  font-size:12px;
+  font-family:Arial;
+  font-weight:normal;
+  color:#000000;
+}.fancy-table tr:last-child td{
+  border-width:0px 1px 0px 0px;
+}.fancy-table tr td:last-child{
+  border-width:0px 0px 1px 0px;
+}.fancy-table tr:last-child td:last-child{
+  border-width:0px 0px 0px 0px;
+}
+.fancy-table tr:first-child td{
+  background-color:#7f003f;
+  border:0px solid #000000;
+  text-align:center;
+  border-width:0px 0px 1px 1px;
+  font-size:14px;
+  font-family:Arial;
+  font-weight:bold;
+  color:#ffffff;
+}
+.fancy-table tr:first-child:hover td{
+  background-color:#7f003f;
+}
+.fancy-table tr:first-child td:first-child{
+  border-width:0px 0px 1px 0px;
+}
+.fancy-table tr:first-child td:last-child{
+  border-width:0px 0px 1px 1px;
+}

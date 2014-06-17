@@ -3,3 +3,7 @@
   <%= file_field_tag :file %>
   <%= submit_tag "Import" %>
 <% end %>
+
+<% if @items %>
+  <%= render partial: "report", locals: {items: @items} %>
+<% end %>

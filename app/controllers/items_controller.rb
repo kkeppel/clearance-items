@@ -5,8 +5,13 @@ class ItemsController < ApplicationController
   def index; end
 
   def import
-    Item.import(params[:file])
-    redirect_to root_url, notice: "CSV was successfully imported."
+    @items = Item.import(params[:file])
+    
+    render action: "index",  locals: { items: @items }
+  end
+
+  def download_pdf
+    send_data(generate_pdf, :filename => "your_report.pdf", :type => "application/pdf")
   end
 
   def show_errors(exception)
